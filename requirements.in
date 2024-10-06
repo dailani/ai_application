@@ -1,5 +1,0 @@
-# requirements.txt
-grpcio==1.42.0
-grpcio-tools==1.42.0
-langchain==0.0.5
-

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package llm;
+
+service LLMService {
+  rpc GenerateText (TextRequest) returns (stream TextResponse);
+  // Health check method
+  rpc HealthCheck (HealthCheckRequest) returns (HealthCheckResponse);
+}
+
+message TextRequest {
+  string input_text = 1;
+}
+
+message TextResponse {
+  string generated_text = 1;
+  bool done = 2;
+}
+
+
+// Health check messages
+message HealthCheckRequest {}
+
+message HealthCheckResponse {
+  string status = 1; // e.g., "Healthy", "Unhealthy"
+}
